@@ -17,8 +17,9 @@ def ask_text(request, keyword):
         photo_id = photo['id']
         secret = photo['secret']
 
-        url = 'https://farm' + str(farm_id) + '.staticflickr.com/' + str(server_id) + '/' + str(photo_id) + '_' + str(secret) + '.jpg'
-        list_of_urls += [url]
+        if farm_id is not 0 and server_id is not 0:
+            url = 'https://farm' + str(farm_id) + '.staticflickr.com/' + str(server_id) + '/' + str(photo_id) + '_' + str(secret) + '.jpg'
+            list_of_urls += [url]
 
     url_dict = []
     for url in list_of_urls:
