@@ -19,5 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('keyword_input_app.urls')),
-    path('searched_photos/<keyword>', include('text_input_app.urls')),
+    path('searched_photos', include('text_input_app.urls')),
 ]

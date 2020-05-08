@@ -6,5 +6,9 @@
 </head>
 <body>
     <h1>Test search_photo Page! keyword you entered: {{keyword}}</h1>
+    {% for current_url in url_dict %}
+        <img src={{ current_url.url }}>
+    {% endfor %}
+
 </body>
 </html>
