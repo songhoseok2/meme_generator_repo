@@ -3,7 +3,11 @@ $(document).ready(function() {
         var input_text = $("#keyword_textfield_id").val();
         if (input_text.includes('/'))
         {
-            alert("Please do not include slash(/) in your keyword.")
+            alert("Please do not include slash(/) in your keyword.");
+        }
+        else if(input_text==='')
+        {
+            alert("Please enter a keyword.");
         }
         else
         {

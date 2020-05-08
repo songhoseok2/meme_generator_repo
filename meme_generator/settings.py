@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'keyword_input_app.apps.KeywordInputAppConfig',
     'text_input_app.apps.TextInputAppConfig',
+    'final_result_app.apps.FinalResultAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,5 +119,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    'meme_generator_repo/static/',
+]
 STATIC_URL = '/static/'

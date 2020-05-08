@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('keyword_input_app.urls')),
     path('searched_photos', include('text_input_app.urls')),
+    path('final_result', include('final_result_app.urls')),
 ]

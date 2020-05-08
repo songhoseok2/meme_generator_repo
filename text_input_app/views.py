@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from flickrapi import FlickrAPI
-from pprint import pprint
 
 def ask_text(request, keyword):
 
@@ -19,20 +18,15 @@ def ask_text(request, keyword):
         secret = photo['secret']
 
         url = 'https://farm' + str(farm_id) + '.staticflickr.com/' + str(server_id) + '/' + str(photo_id) + '_' + str(secret) + '.jpg'
-        print('searched url:', url)
         list_of_urls += [url]
-
-    print('DEBUG: list_of_urls:', list_of_urls)
 
     url_dict = []
     for url in list_of_urls:
         url_dict += [{'url': url}]
-    pprint(url_dict)
 
     context = {
         'url_dict': url_dict,
         'keyword': keyword
     }
-    pprint(context)
 
     return render(request, 'text_input_app/text_input_page.html', context)
